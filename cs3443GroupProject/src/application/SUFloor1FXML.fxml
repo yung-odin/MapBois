@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #261F87;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SUFloor1Controller">
+   <children>
+      <ImageView fitHeight="652.0" fitWidth="555.0" layoutX="148.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../SUMap-floor1.png" />
+         </image></ImageView>
+      <Circle fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
