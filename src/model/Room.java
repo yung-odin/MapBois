@@ -7,8 +7,9 @@ public class Room {
     private int coorY;
     private int floorNum;
 
-    public void Room(String buildingCode, String roomNum, int coorX, int coorY, int floorNum) {
-        this.buildingCode = buildingCode;
+    public Room(String roomNum, int coorX, int coorY, int floorNum) {
+        // TODO: Change buildingCode to be dynamic
+        this.buildingCode = "SU";
         this.roomNum = roomNum;
         this.coorX = coorX;
         this.coorY = coorY;

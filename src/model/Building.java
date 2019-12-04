@@ -1,6 +1,10 @@
 package model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Building {
     private String buildingCode;
@@ -9,12 +13,14 @@ public class Building {
     private int numFloors;
     private ArrayList<Room> Rooms;
 
-    public void Building(String buildingCode, String buildingName, int numRooms, int numFloors) {
+    public Building(String buildingCode, String buildingName, int numRooms, int numFloors)  throws IOException {
         this.buildingCode = buildingCode;
+        // TODO: Change buildingName to be generated
         this.buildingName = buildingName;
         this.numRooms = numRooms;
         this.numFloors = numFloors;
         this.Rooms = new ArrayList<Room>();
+        openFile();
     }
 
     public String getBuildingCode() {
@@ -55,5 +61,38 @@ public class Building {
 
     public void setRooms(ArrayList<Room> rooms) {
         Rooms = rooms;
+    }
+
+    public void openFile() {
+        // Setting file path
+        String absPathSU = System.getProperty( "user.dir" ) + "/src/data/SU.csv";
+
+        try {
+            // Storing file Path
+            File file = new File( absPathSU );
+
+            // Reading file by line
+            Scanner scan = new Scanner( file );
+
+            // While loop continue until EOF
+            while ( scan.hasNextLine() ) {
+                // Splitting each line by it's commas
+                String values[] = scan.nextLine().split(",");
+                System.out.println(values[0]);
+                System.out.println(values[1]);
+                System.out.println(values[2]);
+                System.out.println(values[3]);
+
+                // Get values needed as integers to be ints
+                int coorX = Integer.parseInt( values[1] );
+                int coorY = Integer.parseInt( values[2] );
+                int floor = Integer.parseInt( values[3] );
+
+                Room room = new Room( values[0], coorX, coorY, floor );
+                Rooms.add( room );
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,23 +1,32 @@
 package controller;
 
+import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
-import javafx.event.*;
+import model.Building;
+import model.Room;
 
-public class HomePageController {
+public class HomePageController implements Initializable {
 
     @FXML
     private Button searchButton;
 
     @FXML
     private TextField searchField;
+
+    public static Building data;
+    public static Room room;
+
+    /************************* Handlers ************************/
 
     @FXML
     void handleEnterPressed(KeyEvent event) 
@@ -68,9 +77,13 @@ public class HomePageController {
     	
     }
     
-    //@Override
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-    	
+    	try {
+    		this.data = new Building("SU", "Student Union", 60, 2);
+		} catch (IOException e) {
+    		e.printStackTrace( );
+		}
     }
 }

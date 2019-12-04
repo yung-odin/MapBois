@@ -1,22 +1,19 @@
 package controller;
 
-import javafx.fxml.*;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.*;
-import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
+import javafx.scene.shape.Circle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-import javafx.application.*;
-import javafx.event.*;
-
 public class SUFloor1Controller implements Initializable, EventHandler<ActionEvent>
 {
+	public Circle marker;
+
 	public int iCircSize = 7;
+
 	   @Override
 	    public void handle(ActionEvent actionEvent)
 	    {

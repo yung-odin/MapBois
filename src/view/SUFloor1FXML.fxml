@@ -11,6 +11,6 @@
          <image>
             <Image url="@SUMap-floor1.png" />
          </image></ImageView>
-      <Circle fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="marker" fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
