@@ -1,16 +1,19 @@
 package model;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Campus {
     private String campusName;
     private String campusCode;
-    private ArrayList<Building> campus;
+    private ArrayList<Building> buildings;
 
-    public void Campus (String campusName, String campusCode) {
+    public Campus (String campusName, String campusCode) {
         this.campusName = campusName;
         this.campusCode = campusCode;
-        this.campus = new ArrayList<>();
+        this.buildings = new ArrayList<>();
     }
 
     public String getCampusName() {
@@ -30,10 +33,10 @@ public class Campus {
     }
 
     public ArrayList<Building> getCampus() {
-        return campus;
+        return buildings;
     }
 
     public void setCampus(ArrayList<Building> campus) {
-        campus = campus;
+        this.buildings = buildings;
     }
 }
