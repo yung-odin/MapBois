@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #261F87;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+   <children>
+      <Label layoutX="283.0" layoutY="50.0" prefHeight="57.0" prefWidth="235.0" text="UTSA Map Helper" textAlignment="CENTER" textFill="#e16a2b">
+         <font>
+            <Font name="Calibri" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="274.0" layoutY="270.0" prefHeight="57.0" prefWidth="252.0" text="What room are you looking for?" textAlignment="CENTER" textFill="#e16a2b">
+         <font>
+            <Font name="Calibri" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchField" layoutX="323.0" layoutY="316.0" onKeyPressed="#handleEnterPressed" prefHeight="22.0" prefWidth="154.0" promptText="EX: SU 1.04.02" style="-fx-background-color: #5E599F;" />
+      <Button fx:id="searchButton" layoutX="350.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="22.0" prefWidth="101.0" style="-fx-background-color: #E16A2B;" text="Search" textFill="#261f87">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

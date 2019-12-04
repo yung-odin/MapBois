@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.Building;
 
 public class Campus {
     private String campusName;
@@ -32,11 +33,11 @@ public class Campus {
         this.campusCode = campusCode;
     }
 
-    public ArrayList<Building> getCampus() {
+    public ArrayList<Building> getBuildings() {
         return buildings;
     }
 
-    public void setCampus(ArrayList<Building> campus) {
+    public void setBuildings(ArrayList<Building> buildings) {
         this.buildings = buildings;
     }
 }
