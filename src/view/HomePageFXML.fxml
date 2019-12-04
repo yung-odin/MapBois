@@ -1,28 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #261F87;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
-      <Label layoutX="283.0" layoutY="50.0" prefHeight="57.0" prefWidth="235.0" text="UTSA Map Helper" textAlignment="CENTER" textFill="#e16a2b">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="381.0" prefHeight="57.0" prefWidth="162.0" text="Map Helper" textAlignment="CENTER" textFill="#f15a22">
          <font>
-            <Font name="Calibri" size="32.0" />
+            <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="270.0" prefHeight="57.0" prefWidth="252.0" text="What room are you looking for?" textAlignment="CENTER" textFill="#e16a2b">
+      <Label alignment="CENTER" layoutX="249.0" layoutY="422.0" prefHeight="57.0" prefWidth="322.0" text="What room are you looking for?" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri" size="19.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="searchField" layoutX="323.0" layoutY="316.0" onKeyPressed="#handleEnterPressed" prefHeight="22.0" prefWidth="154.0" promptText="EX: SU 1.04.02" style="-fx-background-color: #5E599F;" />
-      <Button fx:id="searchButton" layoutX="350.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="22.0" prefWidth="101.0" style="-fx-background-color: #E16A2B;" text="Search" textFill="#261f87">
+      <TextField fx:id="searchField" alignment="CENTER" layoutX="334.0" layoutY="482.0" onKeyPressed="#handleEnterPressed" prefHeight="22.0" prefWidth="154.0" promptText="EX: SU 1.04.02" style="-fx-background-color: #405472; -fx-text-inner-color: #FFFFFF;" />
+      <Button fx:id="searchButton" layoutX="351.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #f15a22;" text="Search" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </Button>
+      <ImageView fx:id="UTSA_logo" fitHeight="136.0" fitWidth="304.0" layoutX="230.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Bird.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="89.0" fitWidth="251.0" layoutX="286.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@UTSAVectorWhite.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="803.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@left.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="802.0" fitWidth="154.0" layoutX="655.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@right.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

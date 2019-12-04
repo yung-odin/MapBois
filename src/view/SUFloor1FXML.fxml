@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #261F87;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SUFloor1Controller">
+<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SUFloor1Controller">
    <children>
+      <AnchorPane layoutY="-1.0" prefHeight="64.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" />
+      <AnchorPane layoutY="736.0" prefHeight="64.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" />
       <ImageView fitHeight="652.0" fitWidth="555.0" layoutX="148.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@SUMap-floor1.png" />
          </image></ImageView>
-      <Circle fx:id="marker" fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="64.0" fitWidth="800.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Map%20page%20layout.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="680.0" layoutY="9.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #f15a22;" text="Home" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
