@@ -13,12 +13,12 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="381.0" prefHeight="57.0" prefWidth="162.0" text="Map Helper" textAlignment="CENTER" textFill="#f15a22">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="394.0" text="Map Helper" textAlignment="CENTER" textFill="#f15a22">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="249.0" layoutY="422.0" prefHeight="57.0" prefWidth="322.0" text="What room are you looking for?" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="256.0" layoutY="436.0" text="What room are you looking for?" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
