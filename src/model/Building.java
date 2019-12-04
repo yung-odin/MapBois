@@ -66,7 +66,7 @@ public class Building {
     public void openFile() {
         // Setting file path
         String absPathSU = System.getProperty( "user.dir" ) + "/src/data/SU.csv";
-
+        int n = 1;
         try {
             // Storing file Path
             File file = new File( absPathSU );
@@ -76,12 +76,15 @@ public class Building {
 
             // While loop continue until EOF
             while ( scan.hasNextLine() ) {
+
                 // Splitting each line by it's commas
                 String values[] = scan.nextLine().split(",");
-                System.out.println(values[0]);
-                System.out.println(values[1]);
-                System.out.println(values[2]);
-                System.out.println(values[3]);
+                System.out.println("---------------------  Room #" + n );
+                System.out.println("Room number - " + values[0]);
+                System.out.println("X coordinate - " + values[1]);
+                System.out.println("Y coordinate - " + values[2]);
+                System.out.println("Floor - " + values[3]);
+                System.out.println();
 
                 // Get values needed as integers to be ints
                 int coorX = Integer.parseInt( values[1] );
@@ -90,6 +93,7 @@ public class Building {
 
                 Room room = new Room( values[0], coorX, coorY, floor );
                 Rooms.add( room );
+                n += 1;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
