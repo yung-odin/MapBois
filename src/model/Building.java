@@ -95,4 +95,12 @@ public class Building {
             e.printStackTrace();
         }
     }
+
+    public Room searchRooms ( String searchField ) {
+        for ( Room target : Rooms ) {
+            if ( searchField.equals( target.getRoomNum() ) )
+                return target;
+        }
+        return null;
+    }
 }
