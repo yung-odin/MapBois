@@ -20,13 +20,13 @@
          <image>
             <Image url="@SUMap-floor1.png" />
          </image></ImageView>
-      <Circle fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="destCirc" fill="#ff3c1f" layoutX="316.0" layoutY="582.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="64.0" fitWidth="800.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Map-page-layout.png" />
          </image>
       </ImageView>
-      <Button fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="680.0" layoutY="9.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #f15a22;" text="Home" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="680.0" layoutY="9.0" mnemonicParsing="false" onAction="#handle" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #f15a22;" text="Home" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>

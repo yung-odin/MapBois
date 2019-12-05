@@ -38,31 +38,27 @@ public class HomePageController implements Initializable {
 
     @FXML
     void handleButtonPress(ActionEvent event) {
-    	int i;
     	String usrInput = searchField.getText();
 		room = data.findRoom( usrInput );
     	//see if they typed anything
     	if( room == null ) {
 			// TODO: Write to app home page: No room found
+            //errorbox.setText("Can not find the room");
 		}
 		changeScene("/view/" + room.getBuildingCode() + "Floor" + room.getFloorNum() + "FXML.fxml");
     }
     
-    void changeScene(String filePath) {
-    	try {
-    		FXMLLoader loader = new FXMLLoader();
-    		loader.setLocation(Main.class.getResource(filePath));
-    		AnchorPane ancPane = loader.load();
-    		Scene scene = new Scene(ancPane,800,800);
-    		if(ancPane == null)
-    			System.out.println("you fucked up(ancPane)");
-    		if(scene == null)
-    			System.out.println("you still fucked up");
-    		Main.stage.setScene(scene);
-    		Main.stage.show();
-		} catch(Exception e) {
-    		e.printStackTrace();
-    	}
+    private void changeScene(String filePath) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource(filePath));
+            AnchorPane ancPane = loader.load();
+            Scene scene = new Scene(ancPane,800,800);
+            Main.stage.setScene(scene);
+            Main.stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
     
     //@Override
@@ -74,7 +70,6 @@ public class HomePageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	try {
     		this.data = new Building("SU", "Student Union", 60, 2);
-    		//this.room = new Room( "0", 0, 0, 0 );
 		} catch (IOException e) {
     		e.printStackTrace( );
 		}

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+
 
 <AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
@@ -23,7 +18,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="searchField" alignment="CENTER" layoutX="324.0" layoutY="482.0" onKeyPressed="#handleEnterPressed" prefHeight="22.0" prefWidth="175.0" promptText="EX: SU 1.04.02" style="-fx-background-color: #405472; -fx-text-inner-color: #FFFFFF;" />
+      <TextField fx:id="searchField" alignment="CENTER" layoutX="334.0" layoutY="482.0" onKeyPressed="#handleEnterPressed" prefHeight="22.0" prefWidth="154.0" promptText="EX: SU 1.04.02" style="-fx-background-color: #405472; -fx-text-inner-color: #FFFFFF;" />
       <Button fx:id="searchButton" layoutX="351.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #f15a22;" text="Search" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
