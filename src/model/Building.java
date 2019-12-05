@@ -100,9 +100,9 @@ public class Building {
         }
     }
 
-    public Room searchRooms ( String searchField ) {
+    public Room findRoom ( String usrInput ) {
         for ( Room target : Rooms ) {
-            if ( searchField.equals( target.getRoomNum() ) )
+            if ( usrInput.equals( target.getRoomNum() ) )
                 return target;
         }
         return null;
