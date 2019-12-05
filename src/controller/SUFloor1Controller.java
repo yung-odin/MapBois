@@ -7,9 +7,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -17,17 +19,23 @@ public class SUFloor1Controller implements Initializable, EventHandler<ActionEve
 	@FXML
 	public Circle destCirc;
 
+	@FXML
+	public Label searchLable;
+
 	@Override
 	public void handle(ActionEvent actionEvent) {
 		changeScene("/view/HomePageFXML.fxml");
 	}
 
 	@Override
-	public void initialize(URL url, ResourceBundle resourceBundle) {
+	public void initialize(URL url, ResourceBundle resourceBundle)
+	{
+		searchLable.setText( HomePageController.room.getBuildingCode() + " " + HomePageController.room.getRoomNum() );
 		moveCirc();
 	}
 
 	private void moveCirc() {
+		//searchLable.setText( HomePageController.room.getBuildingCode() + HomePageController.room.getRoomNum() );
 		destCirc.setLayoutX(HomePageController.room.getCoorX());
 		destCirc.setLayoutY(HomePageController.room.getCoorY());
 	}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 
 <AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #112A4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
@@ -44,5 +44,10 @@
             <Image url="@right.png" />
          </image>
       </ImageView>
+      <Label fx:id="errorTxt" alignment="CENTER" layoutX="339.0" layoutY="510.0" textAlignment="CENTER" textFill="#ff0c0c">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -23,6 +23,9 @@ public class HomePageController implements Initializable {
     @FXML
     private TextField searchField;
 
+    @FXML
+    public Label errorTxt;
+
     public static Building data;
     public static Room room;
 
@@ -38,13 +41,18 @@ public class HomePageController implements Initializable {
 
     @FXML
     void handleButtonPress(ActionEvent event) {
-    	String usrInput = searchField.getText();
-		room = data.findRoom( usrInput );
-    	//see if they typed anything
-    	if( room == null ) {
-			// TODO: Write to app home page: No room found
-            //errorbox.setText("Can not find the room");
-		}
+        int flag = 0;
+
+        while(flag == 0)
+        {
+            String usrInput = searchField.getText( );
+            room = data.findRoom( usrInput );
+            //see if they typed anything
+            if ( room == null )
+            {
+                errorTxt.setText( "Room does not exist" );
+            }
+        }
 		changeScene("/view/" + room.getBuildingCode() + "Floor" + room.getFloorNum() + "FXML.fxml");
     }
     

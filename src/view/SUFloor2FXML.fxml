@@ -20,6 +20,11 @@
                   <Image url="@Map-page-layout.png" />
                </image>
             </ImageView>
+            <Label fx:id="searchLable" alignment="CENTER" contentDisplay="CENTER" layoutX="329.0" layoutY="10.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="30.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <ImageView fitHeight="652.0" fitWidth="555.0" layoutX="148.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">

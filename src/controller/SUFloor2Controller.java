@@ -3,9 +3,11 @@ package controller;
 import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,6 +16,9 @@ import application.Main;
 public class SUFloor2Controller implements Initializable, EventHandler<ActionEvent> {
     @FXML
     private Circle destCirc;
+
+    @FXML
+    public Label searchLable;
 
     public void moveCirc(int x, int y) {
         destCirc.setLayoutX(x);
@@ -29,10 +34,12 @@ public class SUFloor2Controller implements Initializable, EventHandler<ActionEve
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        searchLable.setText( HomePageController.room.getBuildingCode() + " " + HomePageController.room.getRoomNum() );
         moveCirc();
     }
 
     private void moveCirc() {
+
         destCirc.setLayoutX(HomePageController.room.getCoorX());
         destCirc.setLayoutY(HomePageController.room.getCoorY());
     }
