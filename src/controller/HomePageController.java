@@ -31,6 +31,12 @@ public class HomePageController implements Initializable {
 
     /************************* Handlers ************************/
 
+    
+    /*
+     * Handles action when the key "Enter" is pressed, con-
+     * ducting a search for the given room number
+     * 
+     */
     @FXML
     void handleEnterPressed(KeyEvent event) {
     	if(event.getCode() == KeyCode.ENTER) {
@@ -38,7 +44,11 @@ public class HomePageController implements Initializable {
     		handleButtonPress(search);
     	}
     }
-
+    /*
+     * Handles search for specified room asked to be found
+     *  	-when room is non-existent or not apart of the directory,
+     *  		prints out a error, allowing the user to enter another room
+     */
     @FXML
     void handleButtonPress(ActionEvent event)
     {
@@ -51,6 +61,10 @@ public class HomePageController implements Initializable {
             }
 		changeScene("/view/" + room.getBuildingCode() + "Floor" + room.getFloorNum() + "FXML.fxml");
     }
+    
+    /*
+     * Changes scene based on user input and if action is true
+     */
     
     private void changeScene(String filePath) {
         try {
@@ -69,7 +83,10 @@ public class HomePageController implements Initializable {
     public void handle(ActionEvent actionEvent) {
     	
     }
-    
+/*
+ * (non-Javadoc)
+ * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+ */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	try {

@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
-
+/*
+ * Campus structure to determine what campus we are looking for a room at
+ */
 public class Campus {
     private String campusName;
     private String campusCode;
