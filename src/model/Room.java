@@ -1,5 +1,8 @@
 package model;
-
+/* 
+ * Building Object:
+ * 	Holds building information that will signify what building the room to be found is at
+ */
 public class Room {
     private String buildingCode;
     private String roomNum;
@@ -9,6 +12,10 @@ public class Room {
 
     public Room(String roomNum, int coorX, int coorY, int floorNum) {
         // TODO: Change buildingCode to be dynamic
+    	
+    	/*
+    	 * Holds where room is located at, and what floor that room is currently on
+    	 */
         this.buildingCode = "SU";
         this.roomNum = roomNum;
         this.coorX = coorX;

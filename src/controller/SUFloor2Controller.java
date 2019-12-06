@@ -19,7 +19,9 @@ public class SUFloor2Controller implements Initializable, EventHandler<ActionEve
 
     @FXML
     public Label searchLable;
-
+/*
+ * Set coordinate of the room to be found
+ */
     public void moveCirc(int x, int y) {
         destCirc.setLayoutX(x);
         destCirc.setLayoutY(y);
@@ -37,7 +39,9 @@ public class SUFloor2Controller implements Initializable, EventHandler<ActionEve
         searchLable.setText( HomePageController.room.getBuildingCode() + " " + HomePageController.room.getRoomNum() );
         moveCirc();
     }
-
+/*
+ * Moves circle based on data coordinates for the room to be located
+ */
     private void moveCirc() {
 
         destCirc.setLayoutX(HomePageController.room.getCoorX());

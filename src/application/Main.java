@@ -7,9 +7,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
+
+
+
 public class Main extends Application {
 	public static Stage stage;
 	public AnchorPane layout;
+	
+	/***
+	 * 
+	 * @author rhg310
+	 * Start class:
+	 * 	-Sets up scene and stage for application to be processed
+	 *	-Utilizes FXML doc in order to load scenes	
+	 *
+	 */
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -24,7 +36,9 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/*
+	 *  Launches Scene
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

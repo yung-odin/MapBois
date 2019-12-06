@@ -14,7 +14,11 @@ import javafx.scene.shape.Circle;
 import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/*
+ * SUFloor1Controller class:
+ * 	-controls the state of the location of the room if room number 
+ * 		given is on the 1st floor
+ */
 public class SUFloor1Controller implements Initializable, EventHandler<ActionEvent> {
 	@FXML
 	public Circle destCirc;
@@ -26,20 +30,29 @@ public class SUFloor1Controller implements Initializable, EventHandler<ActionEve
 	public void handle(ActionEvent actionEvent) {
 		changeScene("/view/HomePageFXML.fxml");
 	}
-
+/*
+ * Initializes location of room when room matches data inside csv
+ * 
+ * (non-Javadoc)
+ * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+ */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle)
 	{
 		searchLable.setText( HomePageController.room.getBuildingCode() + " " + HomePageController.room.getRoomNum() );
 		moveCirc();
 	}
-
+/*
+ * Moves locator based on given room data
+ */
 	private void moveCirc() {
 		//searchLable.setText( HomePageController.room.getBuildingCode() + HomePageController.room.getRoomNum() );
 		destCirc.setLayoutX(HomePageController.room.getCoorX());
 		destCirc.setLayoutY(HomePageController.room.getCoorY());
 	}
-
+/*
+ * Loads Scene
+ */
 	private void changeScene(String filePath)
 	{
 
