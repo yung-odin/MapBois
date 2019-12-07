@@ -10,13 +10,11 @@ public class Room {
     private int coorY;
     private int floorNum;
 
-    public Room(String roomNum, int coorX, int coorY, int floorNum) {
-        // TODO: Change buildingCode to be dynamic
-    	
+    public Room(String buildingCode, String roomNum, int coorX, int coorY, int floorNum) {
     	/*
     	 * Holds where room is located at, and what floor that room is currently on
     	 */
-        this.buildingCode = "SU";
+        this.buildingCode = buildingCode;
         this.roomNum = roomNum;
         this.coorX = coorX;
         this.coorY = coorY;

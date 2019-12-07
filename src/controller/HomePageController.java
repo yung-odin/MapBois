@@ -7,12 +7,12 @@ import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
 import model.Building;
+import model.Campus;
 import model.Room;
 
 public class HomePageController implements Initializable {
@@ -26,12 +26,11 @@ public class HomePageController implements Initializable {
     @FXML
     public Label errorTxt;
 
+    public static Campus campus;
     public static Building data;
     public static Room room;
 
     /************************* Handlers ************************/
-
-    
     /*
      * Handles action when the key "Enter" is pressed, con-
      * ducting a search for the given room number
@@ -52,13 +51,20 @@ public class HomePageController implements Initializable {
     @FXML
     void handleButtonPress(ActionEvent event)
     {
-            String usrInput = searchField.getText( );
-            room = data.findRoom( usrInput );
-            //see if they typed anything
-            if ( room == null )
-            {
-                errorTxt.setText( "Room does not exist" );
-            }
+        String rawUsrInput = searchField.getText( );
+        String pattern = "([a-zA-Z]{2,3})(\\S+)";
+        String usrInput= rawUsrInput.replaceAll(pattern, "$1" + " " + "$2");
+        String[] values = usrInput.split(" ");
+
+        data = campus.findBuilding( values[0] );
+        room = data.findRoom( values[1] );
+        //see if they typed anything
+        if ( room == null ) {
+            errorTxt.setText( "Room does not exist" );
+        }
+        if ( data == null) {
+            errorTxt.setText( "Building does not exist" );
+        }
 		changeScene("/view/" + room.getBuildingCode() + "Floor" + room.getFloorNum() + "FXML.fxml");
     }
     
@@ -78,21 +84,13 @@ public class HomePageController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    //@Override
-    public void handle(ActionEvent actionEvent) {
-    	
-    }
+
 /*
  * (non-Javadoc)
  * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
  */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    	try {
-    		this.data = new Building("SU", "Student Union", 60, 2);
-		} catch (IOException e) {
-    		e.printStackTrace( );
-		}
+        campus = new Campus("University of Texas at San Antonio","UTSA");
     }
 }
