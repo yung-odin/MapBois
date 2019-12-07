@@ -2,7 +2,6 @@ package model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,13 +12,12 @@ public class Building {
     private int numFloors;
     private ArrayList<Room> Rooms;
 
-    public Building(String buildingCode, String buildingName, int numRooms, int numFloors)  throws IOException {
+    public Building(String buildingCode, String buildingName, int numRooms, int numFloors) {
         this.buildingCode = buildingCode;
-        // TODO: Change buildingName to be generated
         this.buildingName = buildingName;
         this.numRooms = numRooms;
         this.numFloors = numFloors;
-        this.Rooms = new ArrayList<Room>();
+        this.Rooms = new ArrayList<>();
         openFile();
     }
 
@@ -65,11 +63,11 @@ public class Building {
 
     public void openFile() {
         // Setting file path
-        String absPathSU = System.getProperty( "user.dir" ) + "/src/data/SU.csv";
+        String absPath = System.getProperty( "user.dir" ) + "/src/data/" + buildingCode +".csv";
         int n = 1;
         try {
             // Storing file Path
-            File file = new File( absPathSU );
+            File file = new File( absPath );
 
             // Reading file by line
             Scanner scan = new Scanner( file );
@@ -78,7 +76,7 @@ public class Building {
             while ( scan.hasNextLine() ) {
 
                 // Splitting each line by it's commas
-                String values[] = scan.nextLine().split(",");
+                String[] values = scan.nextLine().split(",");
                 System.out.println("---------------------  Room #" + n );
                 System.out.println("Room number - " + values[0]);
                 System.out.println("X coordinate - " + values[1]);
@@ -91,7 +89,7 @@ public class Building {
                 int coorY = Integer.parseInt( values[2] );
                 int floor = Integer.parseInt( values[3] );
 
-                Room room = new Room( values[0], coorX, coorY, floor );
+                Room room = new Room( buildingCode, values[0], coorX, coorY, floor );
                 Rooms.add( room );
                 n += 1;
             }
